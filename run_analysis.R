@@ -1,5 +1,5 @@
 ################################################################################
-###  function run_analysis()                                                 ###                          ###                                                                          ###   
+###  function run_analysis()                                                 ###        ###                                                                          ###   
 ###  Notes:                                                                  ### 
 ###    1. function assumes working directory is ~/.../UCI HAR Dataset/.      ###
 ###    2. read in TRAIN data sets into dataframes: x_train, y_train, s_train ###
@@ -111,13 +111,14 @@ run_analysis <- function(){
    ####   Changing to Activity names:                                    ####
    ####   WALKING, WALK_UPSTAIR, WALK_DNSTAIR, SITTING, STANDING, LAYING ####
    ##########################################################################
+   cat(" Now changing Activity type to be names: WALKING,WALK_UPSTAIR,WALK_DNSTAIR,SITTING,STANDING,LAYING","\n")
    activity=c("WALKING","WALK_UPSTAIR","WALK_DNSTAIR","SITTING","STANDING","LAYING")
    for (i in 1:180) {
         final_data$Activity1[i] <-activity[final_data$Activity[i]]
    }  
-   final_data$Activity <- final_data$Activity1
-   final_data$Activity1 <- NULL # remove column after it is done
-	
+   final_data$Activity <- final_data$Activity1 # replace the original Activity column
+   final_data$Activity1 <- NULL # remove Activity1 column after it is done
+
    cat(" Writing clean data to file 'final_data.txt' .........","\n\n")
    write.table (final_data, file="final_data.txt",row.name=FALSE)
    
@@ -125,6 +126,8 @@ run_analysis <- function(){
    ####   Return the final dataframe                                     ####
    ########################################################################## 
    cat (" Done!","\n")
-   return(final_data) # need not be in final code
+   print(final_data[1:18,1:6]) # display a samplr of 1st 18 rows of tidy data
+   
+   #return(final_data) # need not be in final code
 }
 
