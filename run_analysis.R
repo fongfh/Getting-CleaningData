@@ -10,7 +10,7 @@
 ###    5. subset of syx_combined with only 'mean' & 'std' are stored         ###
 ###         in dataframe syx_combined1.                                      ###
 ###    6. final clean data file is store in dataframe final_data &           ###
-###         written to "run_analysis.txt" (stored in working directory).     ###
+###         written to "final_data.txt" (stored in working directory).     ###
 ###                                                                          ###
 ################################################################################
 
