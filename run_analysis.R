@@ -20,8 +20,7 @@ run_analysis <- function(){
 
    #############################################################################
    ####   Read in the TRAIN data set                                        ####
-   ############################################################################# 
-     
+   #############################################################################      
    cat (" Reading X_train data (7352 obs X 561 col) .... ","\n")
    x_train <-read.table("./train/X_train.txt",header = FALSE,sep ="")
 
@@ -49,7 +48,6 @@ run_analysis <- function(){
    ###########################################################################
    ####   Next read in the TEST data set                                  ####
    ########################################################################### 
-
    cat(" Reading X_test data (2947 obs X 561 col) ....","\n")
    x_test <-read.table("./test/X_test.txt",header = FALSE,sep ="") 
 
@@ -74,7 +72,6 @@ run_analysis <- function(){
    ###########################################################################
    ####   Combine the TRAIN and TEST datasets                             ####
    ########################################################################### 
-
    cat(" Append TRAIN & TEST dataframes to syx_combined (10299 obs X 563 col)","\n\n")
    syx_combined = rbind(syx_train,syx_test)
 
@@ -82,7 +79,6 @@ run_analysis <- function(){
    ####   Create a new dataframe for columns with                         ####
    ####   'mean()' or 'std().                                             ####
    ########################################################################### 
-
    cat(" Remove cols that are NOT 'mean' or 'std' .... ","\n")
    syx_combined1 = data.frame(matrix (ncol=0,nrow=10299)) # create an empty dataframe
    syx_combined1_colnames = c() # create an empty vector to hold the column names
@@ -108,16 +104,27 @@ run_analysis <- function(){
    ##########################################################################
    ####   Compute the summaries by User and Activity                     ####
    ##########################################################################
-
-   cat(" Now computing summaries of by Subject_ID and Actitivity type. ......","\n")
+   cat(" Now computing summaries of by Subject_ID and Activity type. ......","\n")
    final_data <- syx_combined1 %>% group_by (Subject_ID, Activity) %>% summarise_each(funs(mean)) 
+
+   ##########################################################################
+   ####   Changing to Activity names:                                    ####
+   ####   WALKING, WALK_UPSTAIR, WALK_DNSTAIR, SITTING, STANDING, LAYING ####
+   ##########################################################################
+   activity=c("WALKING","WALK_UPSTAIR","WALK_DNSTAIR","SITTING","STANDING","LAYING")
+   for (i in 1:180) {
+        final_data$Activity1[i] <-activity[final_data$Activity[i]]
+   }  
+   final_data$Activity <- final_data$Activity1
+   final_data$Activity1 <- NULL # remove column after it is done
+	
    cat(" Writing clean data to file 'final_data.txt' .........","\n\n")
    write.table (final_data, file="final_data.txt",row.name=FALSE)
    
    ##########################################################################
    ####   Return the final dataframe                                     ####
    ########################################################################## 
-
    cat (" Done!","\n")
-   #return(final_data) # need not be in final code
+   return(final_data) # need not be in final code
 }
+
