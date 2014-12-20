@@ -29,60 +29,20 @@ Output from the 'run_analysis.R' script:
 
 The following **mean()** and **std()** columns that made up the tidy data frame. There are a total of **66** mean/std variables.
  
-  1. "Subject_ID"                  
-  2. "Activity"                    
-  3. "tBodyAcc-mean()-X"          
-  4. "tBodyAcc-mean()-Y"           
-  5. "tBodyAcc-mean()-Z"           
-  6. "tBodyAcc-std()-X" 
-  7. "tBodyAcc-std()-Y"            
-  8. "tBodyAcc-std()-Z"            
-  9. "tGravityAcc-mean()-X"       
-  10. "tGravityAcc-mean()-Y"        
-  11. "tGravityAcc-mean()-Z"        
-  12. "tGravityAcc-std()-X"        
-  13. "tGravityAcc-std()-Y"         
-  14. "tGravityAcc-std()-Z"         
-  15. "tBodyAccJerk-mean()-X"      
-  16. "tBodyAccJerk-mean()-Y"       
-  17. "tBodyAccJerk-mean()-Z"       
-  18. "tBodyAccJerk-std()-X"       
-  19. "tBodyAccJerk-std()-Y"        
-  20. "tBodyAccJerk-std()-Z"        
-  21. "tBodyGyro-mean()-X"         
-  22. "tBodyGyro-mean()-Y"          
-  23. "tBodyGyro-mean()-Z"          
-  24. "tBodyGyro-std()-X"          
-  25. "tBodyGyro-std()-Y"           
-  26. "tBodyGyro-std()-Z"           
-  27. "tBodyGyroJerk-mean()-X"     
-  28. "tBodyGyroJerk-mean()-Y"      
-  29. "tBodyGyroJerk-mean()-Z"      
-  30. "tBodyGyroJerk-std()-X"      
-  31. "tBodyGyroJerk-std()-Y"       
-  32. "tBodyGyroJerk-std()-Z"       
-  33. "tBodyAccMag-mean()"         
-  34. "tBodyAccMag-std()"           
-  35. "tGravityAccMag-mean()"       
-  36. "tGravityAccMag-std()"       
-  37. "tBodyAccJerkMag-mean()"      
-  38. "tBodyAccJerkMag-std()"       
-  39. "tBodyGyroMag-mean()"        
-  40. "tBodyGyroMag-std()"          
-  41. "tBodyGyroJerkMag-mean()"     
-  42. "tBodyGyroJerkMag-std()"     
-  43. "fBodyAcc-mean()-X"           
-      44. "fBodyAcc-mean()-Y"           
-  45. "fBodyAcc-mean()-Z"          
-  46. "fBodyAcc-std()-X"            
-  47. "fBodyAcc-std()-Y"            "fBodyAcc-std()-Z"           
-[49] "fBodyAccJerk-mean()-X"       "fBodyAccJerk-mean()-Y"       "fBodyAccJerk-mean()-Z"      
-[52] "fBodyAccJerk-std()-X"        "fBodyAccJerk-std()-Y"        "fBodyAccJerk-std()-Z"       
-[55] "fBodyGyro-mean()-X"          "fBodyGyro-mean()-Y"          "fBodyGyro-mean()-Z"         
-[58] "fBodyGyro-std()-X"           "fBodyGyro-std()-Y"           "fBodyGyro-std()-Z"          
-[61] "fBodyAccMag-mean()"          "fBodyAccMag-std()"           "fBodyBodyAccJerkMag-mean()" 
-[64] "fBodyBodyAccJerkMag-std()"   "fBodyBodyGyroMag-mean()"     "fBodyBodyGyroMag-std()"     
-[67] "fBodyBodyGyroJerkMag-mean()" "fBodyBodyGyroJerkMag-std()" 
+           
+|  1 | "tBodyAcc-mean()-X" |"tBodyAcc-mean()-Y" |"tBodyAcc-mean()-Z" |"tBodyAcc-std()-X" |"tBodyAcc-std()-Y" |
+|  6 | "tBodyAcc-std()-Z"  |"tGravityAcc-mean()-X" |"tGravityAcc-mean()-Y" |"tGravityAcc-mean()-Z" |"tGravityAcc-std()-X" |     
+| 11 | "tGravityAcc-std()-Y" |"tGravityAcc-std()-Z" |"tBodyAccJerk-mean()-X" |"tBodyAccJerk-mean()-Y" |"tBodyAccJerk-mean()-Z" |       
+| 16 | "tBodyAccJerk-std()-X" |"tBodyAccJerk-std()-Y" |"tBodyAccJerk-std()-Z" |"tBodyGyro-mean()-X" |"tBodyGyro-mean()-Y" |          
+| 21 | "tBodyGyro-mean()-Z" |"tBodyGyro-std()-X" |"tBodyGyro-std()-Y" |"tBodyGyro-std()-Z" |"tBodyGyroJerk-mean()-X"     
+| 26 | "tBodyGyroJerk-mean()-Y" |"tBodyGyroJerk-mean()-Z" |"tBodyGyroJerk-std()-X" |"tBodyGyroJerk-std()-Y" |"tBodyGyroJerk-std()-Z"       
+| 31 | "tBodyAccMag-mean()" |"tBodyAccMag-std()" |"tGravityAccMag-mean()" |"tGravityAccMag-std()" |"tBodyAccJerkMag-mean()"      
+| 36 | "tBodyAccJerkMag-std()" |"tBodyGyroMag-mean()" |"tBodyGyroMag-std()" |"tBodyGyroJerkMag-mean()" |"tBodyGyroJerkMag-std()"     
+| 41 | "fBodyAcc-mean()-X" |"fBodyAcc-mean()-Y" |"fBodyAcc-mean()-Z" |"fBodyAcc-std()-X" |"fBodyAcc-std()-Y"            
+| 46 | "fBodyAcc-std()-Z" |"fBodyAccJerk-mean()-X" |"fBodyAccJerk-mean()-Y" |"fBodyAccJerk-mean()-Z" |"fBodyAccJerk-std()-X"        
+| 51 | "fBodyAccJerk-std()-Y" |"fBodyAccJerk-std()-Z" |"fBodyGyro-mean()-X" |"fBodyGyro-mean()-Y" |"fBodyGyro-mean()-Z"         
+| 56 | "fBodyGyro-std()-X" |"fBodyGyro-std()-Y" |"fBodyGyro-std()-Z" |"fBodyAccMag-mean()" |"fBodyAccMag-std()"           
+| 61 | "fBodyBodyAccJerkMag-mean()" |"fBodyBodyAccJerkMag-std()" |"fBodyBodyGyroMag-mean()" |"fBodyBodyGyroMag-std()" |"fBodyBodyGyroJerkMag-mean()" | 66 | "fBodyBodyGyroJerkMag-std()" 
 
 
 A sample of the first 20 rows of the final tidy dataframe is shown below. Due to space constraints, only the first 10 columns of the dataframe are listed.
@@ -100,12 +60,12 @@ A sample of the first 20 rows of the final tidy dataframe is shown below. Due to
 |            2| WALK_DNSTAIR|         0.2776153|      -0.022661416|       -0.11681294|       0.04636668|      0.262881789|
 |            2|      SITTING|         0.2770874|      -0.015687994|       -0.10921827|      -0.98682228|     -0.950704499|
 |            2|     STANDING|         0.2779115|      -0.018420827|       -0.10590854|      -0.98727189|     -0.957304989|
-             2       LAYING         0.2813734      -0.018158740       -0.10724561      -0.97405946     -0.980277399
-           3      WALKING         0.2755675      -0.017176784       -0.11267486      -0.36035673     -0.069914065
-           3 WALK_UPSTAIR         0.2608199      -0.032410941       -0.11006486      -0.31312344      0.011628081
-           3 WALK_DNSTAIR         0.2924235      -0.019355408       -0.11613984      -0.05741005     -0.033150372
-           3      SITTING         0.2571976      -0.003502998       -0.09835792      -0.97101012     -0.856617812
-           3     STANDING         0.2800465      -0.014337656       -0.10162172      -0.96674254     -0.893449307
-           3       LAYING         0.2755169      -0.018955679       -0.10130048      -0.98277664     -0.962057545
-           4      WALKING         0.2785820      -0.014839948       -0.11140306      -0.44082997     -0.078826737
-           4 WALK_UPSTAIR         0.2708767      -0.031980430       -0.11421946      -0.20493304     -0.066689911
+|            2|       LAYING|         0.2813734|      -0.018158740|       -0.10724561|      -0.97405946|     -0.980277399|
+|            3|      WALKING|         0.2755675|      -0.017176784|       -0.11267486|      -0.36035673|     -0.069914065|
+|            3| WALK_UPSTAIR|         0.2608199|      -0.032410941|       -0.11006486|      -0.31312344|      0.011628081|
+|            3| WALK_DNSTAIR|         0.2924235|      -0.019355408|       -0.11613984|      -0.05741005|     -0.033150372|
+|            3|      SITTING|         0.2571976|      -0.003502998|       -0.09835792|      -0.97101012|     -0.856617812|
+|            3|     STANDING|         0.2800465|      -0.014337656|       -0.10162172|      -0.96674254|     -0.893449307|
+|            3|       LAYING|         0.2755169|      -0.018955679|       -0.10130048|      -0.98277664|     -0.962057545|
+|            4|      WALKING|         0.2785820|      -0.014839948|       -0.11140306|      -0.44082997|     -0.078826737|
+|            4| WALK_UPSTAIR|         0.2708767|      -0.031980430|       -0.11421946|      -0.20493304|     -0.066689911|
