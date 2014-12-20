@@ -88,7 +88,7 @@ A R script called **'run_analysis.R'** reads in the above data files and process
 3. It reads in TEST data sets into dataframes: x_test (file: 'X_test.txt'), y_test (file: 'y_test.txt'), s_test (file: 'subject_test.txt') and combines the data frames into bigger dataframe: syx_test. 
 4. It merges TRAIN (syx_train) & TEST (syx_test) dataframes and stores the merged data frame to syx_combined.
 5. A subset of syx_combined with only 'mean()' and 'std()' is stored in dataframe called syx_combined1. 
-**NOTE:** Only variables that match 'mean()' abd 'std()' are selected to be in the final TIDY data. It neabs that variables that do not match will be left out, like variables with 'meanFreq()' or 'tBodyAccJerkMean;.           
+   - **NOTE:** Only variables that match 'mean()' abd 'std()' are selected to be in the final TIDY data. It neabs that variables that do not match will be left out, like variables with 'meanFreq()' or 'tBodyAccJerkMean;.           
 6. The final clean data file is store in dataframe 'final_data' & written to "final_data.txt" (stored in working directory).   
 The resultant **TIDY** dataframe is stored in "final_data.txt" in the working directory. It consist of 180 observations in **68** variables, of which 2 are the categorical variables ("Subject_ID" and "Activity") and the rest are the variables related to mean() and std().
 
@@ -96,10 +96,10 @@ The resultant **TIDY** dataframe is stored in "final_data.txt" in the working di
 How to use the 'run_analysis.R' script:
 ---------------------------------------
 
-From R command prompt:
+From R command prompt, type the following::
  
->   > source("run_analysis1.R")
->   > run_analysis()
+    R Prompt> source("run_analysis1.R") 
+    R Prompt> run_analysis()
     Project: Data Collection & Cleaning 
 
     Reading X_train data (7352 obs X 561 col) ....  
@@ -123,9 +123,9 @@ From R command prompt:
     Writing clean data to file 'final_data.txt' ......... 
 
     Done! 
-   >
+    
 
-Note that run_analysis() has no arguments. It writes the final TIDY data set to a file **"final_data.txt"**.
+Note that **run_analysis()** has no arguments. It writes the final **TIDY** data set to a file **"final_data.txt"**.
  
 
 Output from the 'run_analysis.R' script:
