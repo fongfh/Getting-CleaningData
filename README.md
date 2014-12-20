@@ -98,8 +98,8 @@ How to use the 'run_analysis.R' script:
 
 From R command prompt:
  
-  > source("run_analysis1.R")
-  > run_analysis()
+>   > source("run_analysis1.R")
+>   > run_analysis()
     Project: Data Collection & Cleaning 
 
     Reading X_train data (7352 obs X 561 col) ....  
@@ -123,7 +123,7 @@ From R command prompt:
     Writing clean data to file 'final_data.txt' ......... 
 
     Done! 
-    >
+   >
 
 Note that run_analysis() has no arguments. It writes the final TIDY data set to a file **"final_data.txt"**.
  
