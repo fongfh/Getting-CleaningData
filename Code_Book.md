@@ -5,7 +5,7 @@ The User whom the data is collected is identified by a number from 1 to 30. Ther
 
 sets. User identification is stored in variable **'Subject_ID"**. 
 
-Each user perfoms 6 tasks. The name of each task is stored in variable **Activity*.
+Each user perfoms 6 tasks. The name of each task is stored in variable **Activity**.
 
 The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-
 
