@@ -77,9 +77,9 @@ run_analysis <- function(){
 
    ###########################################################################
    ####   Create a new dataframe for columns with                         ####
-   ####   'mean()' or 'std().                                             ####
+   ####   'mean()' or 'std()'.                                            ####
    ########################################################################### 
-   cat(" Remove cols that are NOT 'mean' or 'std' .... ","\n")
+   cat(" Remove cols that are NOT 'mean()' or 'std()' .... ","\n")
    syx_combined1 = data.frame(matrix (ncol=0,nrow=10299)) # create an empty dataframe
    syx_combined1_colnames = c() # create an empty vector to hold the column names
    
@@ -93,7 +93,7 @@ run_analysis <- function(){
 
    #### now check and remove columns that are not 'mean()' or 'std()'   ####
    for (i in 3:563){
-      if (grepl("mean()",colnames(syx_combined[i])) | grepl("std()",colnames(syx_combined[i])))
+      if (grepl("mean()",colnames(syx_combined[i]),fixed=TRUE) | grepl("std()",colnames(syx_combined[i]),fixed=TRUE))
       {
           syx_combined1 <- cbind(syx_combined1, syx_combined[,i])
           syx_combined1_colnames = c(syx_combined1_colnames,colnames(syx_combined)[i])
@@ -125,8 +125,9 @@ run_analysis <- function(){
    ##########################################################################
    ####   Return the final dataframe                                     ####
    ########################################################################## 
-   cat (" Done!","\n")
-   print(final_data[1:18,1:6]) # display a samplr of 1st 18 rows of tidy data
+   cat (" Done!","\n\n")
+   cat(" Sample of final tidy dataframe .........","\n\n")
+   print(final_data[1:18,1:6]) # display a sample of 1st 18 rows of tidy data
    
    #return(final_data) # need not be in final code
 }
