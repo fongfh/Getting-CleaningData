@@ -29,7 +29,7 @@ Output from the 'run_analysis.R' script:
 
 The following **mean()** and **std()** columns that made up the tidy data frame. There are a total of **66** mean/std variables.
  
-           
+|----|---------------------|--------------------|--------------------|-------------------|-------------------|           
 |  1 | "tBodyAcc-mean()-X" |"tBodyAcc-mean()-Y" |"tBodyAcc-mean()-Z" |"tBodyAcc-std()-X" |"tBodyAcc-std()-Y" |
 |  6 | "tBodyAcc-std()-Z"  |"tGravityAcc-mean()-X" |"tGravityAcc-mean()-Y" |"tGravityAcc-mean()-Z" |"tGravityAcc-std()-X" |     
 | 11 | "tGravityAcc-std()-Y" |"tGravityAcc-std()-Z" |"tBodyAccJerk-mean()-X" |"tBodyAccJerk-mean()-Y" |"tBodyAccJerk-mean()-Z" |       
