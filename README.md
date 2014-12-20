@@ -14,6 +14,13 @@ A R script called 'run_analysis.R' reads in the data files and processes the dat
    * Appropriately labels the data set with descriptive variable names. 
    * Creates a new, independent tidy data set with the average of each variable for each activity and each subject.
 
+How to use the 'run_analysis.R' script:
+---------------------------------------
+
+
+
+
+
 Notes on the R Script
 ---------------------
 
@@ -22,6 +29,7 @@ Notes on the R Script
   3. It reads in TEST data sets into dataframes: x_test, y_test, s_test & combines into bigger dataframe: syx_test.
   4. It merges TRAIN & TEST dataframes is stored in syx_combined.
   5. Subset of syx_combined with only 'mean' & 'std' is stored in dataframe syx_combined1.                  6. The final clean data file is store in dataframe 'final_data' & written to "final_data.txt" (stored in working directory).   
+
 
 
 Output from the 'run_analysis.R' script:
@@ -43,7 +51,8 @@ The following **mean()** and **std()** columns that made up the tidy data frame.
 | 46 | "fBodyAcc-std()-Z" |"fBodyAccJerk-mean()-X" |"fBodyAccJerk-mean()-Y" |"fBodyAccJerk-mean()-Z" |"fBodyAccJerk-std()-X" |        
 | 51 | "fBodyAccJerk-std()-Y" |"fBodyAccJerk-std()-Z" |"fBodyGyro-mean()-X" |"fBodyGyro-mean()-Y" |"fBodyGyro-mean()-Z" |        
 | 56 | "fBodyGyro-std()-X" |"fBodyGyro-std()-Y" |"fBodyGyro-std()-Z" |"fBodyAccMag-mean()" |"fBodyAccMag-std()" |          
-| 61 | "fBodyBodyAccJerkMag-mean()" |"fBodyBodyAccJerkMag-std()" |"fBodyBodyGyroMag-mean()" |"fBodyBodyGyroMag-std()" |"fBodyBodyGyroJerkMag-mean()" || 66 | "fBodyBodyGyroJerkMag-std()" |    |    |    |    |
+| 61 | "fBodyBodyAccJerkMag-mean()" |"fBodyBodyAccJerkMag-std()" |"fBodyBodyGyroMag-mean()" |"fBodyBodyGyroMag-std()" |"fBodyBodyGyroJerkMag-mean()" |
+| 66 | "fBodyBodyGyroJerkMag-std()" |    |    |    |    |
 
 
 A sample of the first 20 rows of the final tidy dataframe is shown below. Due to space constraints, only the first 7 columns of the dataframe are listed.
