@@ -1,5 +1,5 @@
-Getting and Cleaning Data Project
-=================================
+PROJECT: Getting and Cleaning Data
+==================================
 
 Background to Project
 ---------------------
@@ -95,7 +95,7 @@ A R script called **'run_analysis.R'** reads in the above data files and process
 The resultant **TIDY** dataframe is stored in "final_data.txt" in the working directory. It consist of 180 observations in **68** variables, of which 2 are the categorical variables ("Subject_ID" and "Activity") and the rest are the variables related to mean() and std().
 
 
-Running the 'run_analysis.R' script
+Running the 'run_analysis.R' Script
 -----------------------------------
 
 From R command prompt, type the following:
@@ -130,7 +130,7 @@ From R command prompt, type the following:
 Note that **run_analysis()** has no arguments. It writes the final **TIDY** data set to a file **"final_data.txt"** and stores it in the working directory..
  
 
-Output from the 'run_analysis.R' script
+Output from the 'run_analysis.R' Script
 ----------------------------------------
 
 The following **mean()** and **std()** columns that made up the tidy data frame. There are a total of **66** mean/std variables with **180** observations (=30 'User_ID's each with 6 'Activites').
@@ -154,7 +154,7 @@ The following **mean()** and **std()** columns that made up the tidy data frame.
 
 
 
-A sample of the first 20 rows of the final tidy dataframe is shown below. It show the combine TRAIN and TEST data sorted by 'Subject_ID' and 'Activity'. 'Subject_ID' ranges form 1 to 30. 'Activity' is one of the following 6: WALKING, WALK_UPSTAIR, WALK_DNSTAIR, SITTING, STANDING, LAYING. Due to space constraints, only the first 7 columns are shown.
+A sample of the first 20 observations of the final **TIDY** dataframe is shown below. It show the combined **TRAIN** and **TEST** data sorted by 'Subject_ID' and 'Activity'. 'Subject_ID' ranges form 1 to 30. 'Activity' is one of the following 6: WALKING, WALK_UPSTAIR, WALK_DNSTAIR, SITTING, STANDING, LAYING. Due to space constraints, only the first 7 columns are shown.
 
  
 |   Subject_ID|     Activity| tBodyAcc-mean()-X| tBodyAcc-mean()-Y| tBodyAcc-mean()-Z| tBodyAcc-std()-X| tBodyAcc-std()-Y|
@@ -181,7 +181,7 @@ A sample of the first 20 rows of the final tidy dataframe is shown below. It sho
 |            4| WALK_UPSTAIR|         0.2708767|      -0.031980430|       -0.11421946|      -0.20493304|     -0.066689911|
 
 
-Structure of TIDY data frame
+Structure of TIDY Data Frame
 ----------------------------
 
 The following is the structure of the final TIDY data frame :
