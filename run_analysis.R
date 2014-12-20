@@ -127,8 +127,8 @@ run_analysis <- function(){
    ########################################################################## 
    cat (" Done!","\n\n")
    cat(" Sample of final tidy dataframe .........","\n\n")
-   print(final_data[1:18,1:6]) # display a sample of 1st 18 rows of tidy data
+   # print(final_data[1:18,1:6]) # display a sample of 1st 18 rows of tidy data
    
-   #return(final_data) # need not be in final code
+   # return(final_data) # need not be in final code
 }
 
