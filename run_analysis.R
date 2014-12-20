@@ -1,5 +1,6 @@
 ################################################################################
-###  function run_analysis()                                                 ###        ###                                                                          ###   
+###  function run_analysis()                                                 ###        
+###                                                                          ###   
 ###  Notes:                                                                  ### 
 ###    1. function assumes working directory is ~/.../UCI HAR Dataset/.      ###
 ###    2. read in TRAIN data sets into dataframes: x_train, y_train, s_train ###
@@ -10,7 +11,7 @@
 ###    5. subset of syx_combined with only 'mean' & 'std' are stored         ###
 ###         in dataframe syx_combined1.                                      ###
 ###    6. final clean data file is store in dataframe final_data &           ###
-###         written to "final_data.txt" (stored in working directory).     ###
+###         written to "final_data.txt" (stored in working directory).       ###
 ###                                                                          ###
 ################################################################################
 
@@ -126,7 +127,7 @@ run_analysis <- function(){
    ####   Return the final dataframe                                     ####
    ########################################################################## 
    cat (" Done!","\n\n")
-   cat(" Sample of final tidy dataframe .........","\n\n")
+   # cat(" Sample of final tidy dataframe .........","\n\n")
    # print(final_data[1:18,1:6]) # display a sample of 1st 18 rows of tidy data
    
    # return(final_data) # need not be in final code
