@@ -29,7 +29,7 @@ Output from the 'run_analysis.R' script:
 
 The following **mean()** and **std()** columns that made up the tidy data frame. There are a total of **66** mean/std variables.
  
-| No.|Variable Name |Variable Name |Variable Name |Variable Name |Variable Name |Variable Name|
+| No | Variable Name       |Variable Name       |Variable Name       |Variable Name      |Variable Name      |
 |----|---------------------|--------------------|--------------------|-------------------|-------------------|           
 |  1 | "tBodyAcc-mean()-X" |"tBodyAcc-mean()-Y" |"tBodyAcc-mean()-Z" |"tBodyAcc-std()-X" |"tBodyAcc-std()-Y" |
 |  6 | "tBodyAcc-std()-Z"  |"tGravityAcc-mean()-X" |"tGravityAcc-mean()-Y" |"tGravityAcc-mean()-Z" |"tGravityAcc-std()-X" |     
@@ -46,7 +46,7 @@ The following **mean()** and **std()** columns that made up the tidy data frame.
 | 61 | "fBodyBodyAccJerkMag-mean()" |"fBodyBodyAccJerkMag-std()" |"fBodyBodyGyroMag-mean()" |"fBodyBodyGyroMag-std()" |"fBodyBodyGyroJerkMag-mean()" | 66 | "fBodyBodyGyroJerkMag-std()" 
 
 
-A sample of the first 20 rows of the final tidy dataframe is shown below. Due to space constraints, only the first 10 columns of the dataframe are listed.
+A sample of the first 20 rows of the final tidy dataframe is shown below. Due to space constraints, only the first 7 columns of the dataframe are listed.
  
 |   Subject_ID|     Activity| tBodyAcc-mean()-X| tBodyAcc-mean()-Y| tBodyAcc-mean()-Z| tBodyAcc-std()-X| tBodyAcc-std()-Y|
 |-------------|-------------|------------------|------------------|------------------|-----------------|-----------------|
