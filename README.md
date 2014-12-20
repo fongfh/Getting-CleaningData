@@ -57,11 +57,11 @@ The set of variables that were estimated from the above signals are:
 
 Additional vectors were obtained by averaging the signals in a signal window sample. These are used on the angle() variable:
 
-gravityMean
-tBodyAccMean
-tBodyAccJerkMean
-tBodyGyroMean
-tBodyGyroJerkMean
+- gravityMean
+- tBodyAccMean
+- tBodyAccJerkMean
+- tBodyGyroMean
+- tBodyGyroJerkMean
 
 
 Data Preparation
@@ -71,14 +71,14 @@ The objective of this project is to extract and create a **TIDY** dataset with f
 
 The following are the data files available:
 
-1. 'features.txt': Contains the ist of all variables avialble. Total of 561 variables per each TRAIN or TEST data.
-2. 'activity_labels.txt': Contains the labels for activites (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) and their associated label number used in the data sets. Label number range from 1 to 6 to denote each of the 6 activities.
-3. 'X_train.txt': Contains the TRAIN data set. It consists of 7352 observations in 561 variables per observation.
-4. 'y_train.txt': Contains the Activity labels (range from 1 to 6) for each record in the TRAIN data set. It consist of 7352 observations in one variable.
-5. 'X_test.txt': Contains the TEST data set. It consists of 2947 observations in 561 variables per observation.
-6. 'y_test.txt': Contains the Activity labels (range from 1 to 6) for each record in the TEST data set. It consist of 2947 observations in one variable.
-7. 'subject_train.txt': Contains the Subject_ID data for each observation of the TRAIN data set. Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
-8. 'subject_test.txt': Contains the Subject_ID data for each observation of the TEST data set. Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
+1. **'features.txt'**: Contains the ist of all variables avialble. Total of 561 variables per each TRAIN or TEST data.
+2. **'activity_labels.txt'**: Contains the labels for activites (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) and their associated label number used in the data sets. Label number range from 1 to 6 to denote each of the 6 activities.
+3. **'X_train.txt'**: Contains the TRAIN data set. It consists of 7352 observations in 561 variables per observation.
+4. **'y_train.txt'**: Contains the Activity labels (range from 1 to 6) for each record in the TRAIN data set. It consist of 7352 observations in one variable.
+5. **'X_test.txt'**: Contains the TEST data set. It consists of 2947 observations in 561 variables per observation.
+6. **'y_test.txt'**: Contains the Activity labels (range from 1 to 6) for each record in the TEST data set. It consist of 2947 observations in one variable.
+7. **'subject_train.txt'**: Contains the Subject_ID data for each observation of the TRAIN data set. Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
+8. **'subject_test.txt'**: Contains the Subject_ID data for each observation of the TEST data set. Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
 
 
 A R script called **'run_analysis.R'** reads in the above data files and processes the data. It does the following:
@@ -87,7 +87,8 @@ A R script called **'run_analysis.R'** reads in the above data files and process
 2. It reads in TRAIN data sets into dataframes: x_train (file: 'X_train.txt'), y_train (file: 'y_train.txt'), s_train (file: 'subject_train.txt') and combines the data frames into bigger dataframe: syx_train. 
 3. It reads in TEST data sets into dataframes: x_test (file: 'X_test.txt'), y_test (file: 'y_test.txt'), s_test (file: 'subject_test.txt') and combines the data frames into bigger dataframe: syx_test. 
 4. It merges TRAIN (syx_train) & TEST (syx_test) dataframes and stores the merged data frame to syx_combined.
-5. A subset of syx_combined with only 'mean()' and 'std()' is stored in dataframe called syx_combined1. **NOTE:** Only variables that match 'mean()' abd 'std()' are selected to be in the final TIDY data. It neabs that variables that do not match will be left out, like variables with 'meanFreq()' or 'tBodyAccJerkMean;.           
+5. A subset of syx_combined with only 'mean()' and 'std()' is stored in dataframe called syx_combined1. 
+**NOTE:** Only variables that match 'mean()' abd 'std()' are selected to be in the final TIDY data. It neabs that variables that do not match will be left out, like variables with 'meanFreq()' or 'tBodyAccJerkMean;.           
 6. The final clean data file is store in dataframe 'final_data' & written to "final_data.txt" (stored in working directory).   
 The resultant **TIDY** dataframe is stored in "final_data.txt" in the working directory. It consist of 180 observations in **68** variables, of which 2 are the categorical variables ("Subject_ID" and "Activity") and the rest are the variables related to mean() and std().
 
@@ -96,33 +97,33 @@ How to use the 'run_analysis.R' script:
 ---------------------------------------
 
 From R command prompt:
+ 
+  > source("run_analysis1.R")
+  > run_analysis()
+    Project: Data Collection & Cleaning 
 
-> source("run_analysis1.R")
-> run_analysis()
- Project: Data Collection & Cleaning 
+    Reading X_train data (7352 obs X 561 col) ....  
+    Reading y_train data (7352 obs X 1 col) ....  
+    Reading subject_train data (7352 obs X 1 col; values 1-30) ....  
+    Reading features data (561 obs X 2 col) ....  
+    Combining dataframes to form syx_train (7352 obs X 563 col) .... 
+    Replacing Column Names with Feature Names .... 
 
- Reading X_train data (7352 obs X 561 col) ....  
- Reading y_train data (7352 obs X 1 col) ....  
- Reading subject_train data (7352 obs X 1 col; values 1-30) ....  
- Reading features data (561 obs X 2 col) ....  
- Combining dataframes to form syx_train (7352 obs X 563 col) .... 
- Replacing Column Names with Feature Names .... 
+    Reading X_test data (2947 obs X 561 col) .... 
+    Reading y_test data (2947 obs X 1 col) .... 
+    Reading subject_test data (2947 obs X 1 col; values 1-30) .... 
+    Combining dataframes to form syx_test (2947 obs X 563 col) .... 
+    Replacing Column Names with Feature Names .... 
 
- Reading X_test data (2947 obs X 561 col) .... 
- Reading y_test data (2947 obs X 1 col) .... 
- Reading subject_test data (2947 obs X 1 col; values 1-30) .... 
- Combining dataframes to form syx_test (2947 obs X 563 col) .... 
- Replacing Column Names with Feature Names .... 
+    Append TRAIN & TEST dataframes to syx_combined (10299 obs X 563 col) 
 
- Append TRAIN & TEST dataframes to syx_combined (10299 obs X 563 col) 
+    Remove cols that are NOT 'mean()' or 'std()' ....  
+    Now computing summaries of by Subject_ID and Activity type. ...... 
+    Now changing Activity type to be names: WALKING,WALK_UPSTAIR,WALK_DNSTAIR,SITTING,STANDING,LAYING 
+    Writing clean data to file 'final_data.txt' ......... 
 
- Remove cols that are NOT 'mean()' or 'std()' ....  
- Now computing summaries of by Subject_ID and Activity type. ...... 
- Now changing Activity type to be names: WALKING,WALK_UPSTAIR,WALK_DNSTAIR,SITTING,STANDING,LAYING 
- Writing clean data to file 'final_data.txt' ......... 
-
- Done! 
->
+    Done! 
+    >
 
 Note that run_analysis() has no arguments. It writes the final TIDY data set to a file **"final_data.txt"**.
  
