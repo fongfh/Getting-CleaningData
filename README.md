@@ -10,6 +10,14 @@ The data sets used in this project are from experiments carried out with a group
 
 The obtained dataset was categorised into a total of 561 variables and has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the **TRAIN** data set and 30% the **TEST** data set. 
 
+A full description is available at the site where the data was obtained: 
+
+http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones 
+
+Here are the data for the project: 
+
+https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
+
 Nature of Data
 --------------
 
