@@ -121,7 +121,7 @@ run_analysis <- function(){
    final_data$Activity1 <- NULL # remove Activity1 column after it is done
 
    cat(" Writing clean data to file 'final_data.txt' .........","\n\n")
-   write.table (final_data, file="final_data.txt",row.name=FALSE)
+   write.table (final_data, file="final_data.txt",row.name=FALSE,sep="\t")
    
    ##########################################################################
    ####   Return the final dataframe                                     ####
