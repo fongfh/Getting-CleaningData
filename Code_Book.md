@@ -1,4 +1,4 @@
-Variables used in TRAIN and TEST Data Sets
+Variables used in TRAIN, TEST and TIDY Data Sets
 ==========================================
 
 The User whom the data is collected is identified by a number from 1 to 30. There are a totla of 30 users in the data 
@@ -52,5 +52,11 @@ The set of variables that were estimated from the above signals are:
 17. **angle()**: Angle between to vectors.
 
 
+NOTE on the final TIDY data set variables
+-----------------------------------------
+ 
+In the final **TIDY** data set (file: 'final_data.txt' or, data frame: 'final_data') , only variables that match **'mean()'** and **'std()'** exactly are selected to be in the final **TIDY** data. 
+
+It neans that variables that do NOT match exactly will be left out, like variables with 'meanFreq()' or 'tBodyAccJerkMean' as these are strictly not mathematically computed mean or standard deviation values.     
 
 
