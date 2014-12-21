@@ -94,7 +94,7 @@ A R script called **'run_analysis.R'** reads in the above data files and process
 5. A subset of syx_combined with only **'mean()'** and **'std()'** is stored in dataframe called syx_combined1. 
    - **NOTE:** Only variables that match **'mean()'** and **'std()'** exactly are selected to be in the final **TIDY** data. It neans that variables that do NOT match exactly will be left out, like variables with 'meanFreq()' or 'tBodyAccJerkMean;.           
 6. The final clean data file is store in dataframe **'final_data'** & written to **"final_data.txt"** (stored in working directory).   
-The resultant **TIDY** dataframe is stored in "final_data.txt" in the working directory. It consist of 180 observations in **68** variables, of which two are the categorical variables ("Subject_ID" and "Activity") and the rest are the variables related to **mean()** and **std()**.
+The resultant **TIDY** dataframe is stored in "final_data.txt" in the working directory. It consist of **180** observations in **68** variables, of which two are the categorical variables ("Subject_ID" and "Activity") and the rest are the variables related to **mean()** and **std()**.
 
 
 Running the 'run_analysis.R' Script
@@ -135,7 +135,7 @@ Note that **run_analysis()** has no arguments. It writes the final **TIDY** data
 Output from the 'run_analysis.R' Script
 ----------------------------------------
 
-The following **mean()** and **std()** columns that made up the **TIDY** data frame. There are a total of **66 mean()** and **std()** variables with **180** observations (=30 'User_ID's each with 6 'Activites'). Note that only variables that matches exactly are included.
+The following **mean()** and **std()** columns that made up the **TIDY** data frame. There are a total of **66 mean()** and **std()** variables with **180** observations (=30 'Subject_ID's each with 6 'Activites'). Note that only variables that matches exactly are included.
  
 | No | Variable Name       |Variable Name       |Variable Name       |Variable Name      |Variable Name      |
 |----|---------------------|--------------------|--------------------|-------------------|-------------------|           
