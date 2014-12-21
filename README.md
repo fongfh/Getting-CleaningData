@@ -4,6 +4,8 @@ PROJECT: Getting and Cleaning Data
 Background to Project
 ---------------------
 
+This project was part of the Coursera module 'Getting and Cleaning Data'.
+
 The data sets used in this project are from experiments carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities: WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING, while wearing a smartphone (Samsung Galaxy S II) at the waist. Using the phone's embedded accelerometer and gyroscope, data on linear acceleration and 3-axial angular velocity were recorded at a constant rate of 50 times a second. 
 
 The obtained dataset was categorised into a total of 561 variables and has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the **TRAIN** data set and 30% the **TEST** data set. 
@@ -79,8 +81,8 @@ The following are the data files available:
 4. **'y_train.txt'**: Contains the Activity labels (range from 1 to 6) for each record in the TRAIN data set. It consist of 7352 observations in one variable.
 5. **'X_test.txt'**: Contains the TEST data set. It consists of 2947 observations in 561 variables per observation.
 6. **'y_test.txt'**: Contains the Activity labels (range from 1 to 6) for each record in the TEST data set. It consist of 2947 observations in one variable.
-7. **'subject_train.txt'**: Contains the Subject_ID data for each observation of the TRAIN data set. Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
-8. **'subject_test.txt'**: Contains the Subject_ID data for each observation of the TEST data set. Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
+7. **'subject_train.txt'**: Contains the Subject_ID data for each observation of the TRAIN data set. Each row identifies the subject (volunteer) who performed the activity for each window sample. Its range is from 1 to 30. 
+8. **'subject_test.txt'**: Contains the Subject_ID data for each observation of the TEST data set. Each row identifies the subject (volunteer) who performed the activity for each window sample. Its range is from 1 to 30. 
 
 
 A R script called **'run_analysis.R'** reads in the above data files and processes the data. It does the following:
@@ -89,10 +91,10 @@ A R script called **'run_analysis.R'** reads in the above data files and process
 2. It reads in **TRAIN** data sets into dataframes: x_train (file: 'X_train.txt'), y_train (file: 'y_train.txt'), s_train (file: 'subject_train.txt') and combines the data frames into bigger dataframe: syx_train. 
 3. It reads in **TEST** data sets into dataframes: x_test (file: 'X_test.txt'), y_test (file: 'y_test.txt'), s_test (file: 'subject_test.txt') and combines the data frames into bigger dataframe: syx_test. 
 4. It merges **TRAIN** (syx_train) & **TEST** (syx_test) dataframes and stores the merged data frame to syx_combined.
-5. A subset of syx_combined with only 'mean()' and 'std()' is stored in dataframe called syx_combined1. 
+5. A subset of syx_combined with only **'mean()'** and **'std()'** is stored in dataframe called syx_combined1. 
    - **NOTE:** Only variables that match **'mean()'** and **'std()'** exactly are selected to be in the final **TIDY** data. It neans that variables that do NOT match exactly will be left out, like variables with 'meanFreq()' or 'tBodyAccJerkMean;.           
 6. The final clean data file is store in dataframe **'final_data'** & written to **"final_data.txt"** (stored in working directory).   
-The resultant **TIDY** dataframe is stored in "final_data.txt" in the working directory. It consist of 180 observations in **68** variables, of which 2 are the categorical variables ("Subject_ID" and "Activity") and the rest are the variables related to mean() and std().
+The resultant **TIDY** dataframe is stored in "final_data.txt" in the working directory. It consist of 180 observations in **68** variables, of which two are the categorical variables ("Subject_ID" and "Activity") and the rest are the variables related to **mean()** and **std()**.
 
 
 Running the 'run_analysis.R' Script
@@ -127,7 +129,7 @@ From R command prompt, type the following:
     Done! 
     
 
-Note that **run_analysis()** has no arguments. It writes the final **TIDY** data set to a file **"final_data.txt"** and stores it in the working directory..
+Note that **run_analysis()** has no arguments. It writes the final **TIDY** data set to a file **"final_data.txt"** and stores it in the working directory.
  
 
 Output from the 'run_analysis.R' Script
@@ -154,7 +156,7 @@ The following **mean()** and **std()** columns that made up the **TIDY** data fr
 
 
 
-A sample of the first 20 observations of the final **TIDY** dataframe is shown below. It show the combined **TRAIN** and **TEST** data sorted by 'Subject_ID' and 'Activity'. 'Subject_ID' ranges from 1 to 30. 'Activity' is one of the following 6: WALKING, WALK_UPSTAIR, WALK_DNSTAIR, SITTING, STANDING, LAYING. Due to space constraints, only the first seven columns of the data frame are shown.
+A sample of the first 20 observations of the final **TIDY** dataframe is shown below. It show the combined **TRAIN** and **TEST** data sorted by 'Subject_ID' and 'Activity'. 'Subject_ID' ranges from 1 to 30. 'Activity' is one of the following six: WALKING, WALK_UPSTAIR, WALK_DNSTAIR, SITTING, STANDING, LAYING. In the table, only the first seven columns of the data frame are shown.
 
  
 |   Subject_ID|     Activity| tBodyAcc-mean()-X| tBodyAcc-mean()-Y| tBodyAcc-mean()-Z| tBodyAcc-std()-X| tBodyAcc-std()-Y|
@@ -184,7 +186,7 @@ A sample of the first 20 observations of the final **TIDY** dataframe is shown b
 Structure of TIDY Data Frame
 ----------------------------
 
-The following is the structure of the final **TIDY** data frame ('final_data') :
+The following is the structure of the final **TIDY** data frame ('final_data').  It consist of 180 observations (6 'Activity' per each of the 30 'Subject_ID') and has 68 variables in total.
  
     R Prompt> str(final_data)  
     Classes ‘grouped_df’, ‘tbl_df’, ‘tbl’ and 'data.frame': 180 obs. of  68 variables:
