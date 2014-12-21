@@ -59,4 +59,11 @@ In the final **TIDY** data set (file: 'final_data.txt' or, data frame: 'final_da
 
 It neans that variables that do NOT match exactly will be left out, like variables with 'meanFreq()' or 'tBodyAccJerkMean' as these are strictly not mathematically computed mean or standard deviation values.     
 
+A full description is available at the site where the data was obtained: 
+
+http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones 
+
+The data for the project is at: 
+
+https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
 
