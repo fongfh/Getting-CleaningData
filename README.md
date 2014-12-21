@@ -4,18 +4,18 @@ PROJECT: Getting and Cleaning Data
 Background to Project
 ---------------------
 
-The data sets used in this project are from experiments carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities: WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING, while wearing a smartphone (Samsung Galaxy S II) at the waist. Using its embedded accelerometer and gyroscope, data on linear acceleration and 3-axial angular velocity were recorded at a constant rate of 50Hz. 
+The data sets used in this project are from experiments carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities: WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING, while wearing a smartphone (Samsung Galaxy S II) at the waist. Using the phone's embedded accelerometer and gyroscope, data on linear acceleration and 3-axial angular velocity were recorded at a constant rate of 50 times a second. 
 
 The obtained dataset was categorised into a total of 561 variables and has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the **TRAIN** data set and 30% the **TEST** data set. 
 
 Nature of Data
 --------------
 
-The features selected for the **TRAIN** and **TEST** data sets come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals **(prefix 't' to denote time)** were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
+The features selected for the **TRAIN** and **TEST** data sets come from the **accelerometer** and **gyroscope** 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals **(prefix 't' to denote time)** were captured at a constant rate of 50 times per second. They were then filtered to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ). 
 
-Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). 
+The body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). 
 
-Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. **(prefix 'f' to denote frequency)**. 
+Finally some of the signals were transformed to the frequency domain producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. **(prefix 'f' to denote frequency)**. 
 
 The signals (listed below) were used to estimate variables of the feature vector for each pattern where'-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
 
@@ -73,8 +73,8 @@ The objective of this project is to extract and create a **TIDY** dataset with f
 
 The following are the data files available:
 
-1. **'features.txt'**: Contains the ist of all variables avialble. Total of 561 variables per each TRAIN or TEST data.
-2. **'activity_labels.txt'**: Contains the labels for activites (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) and their associated label number used in the data sets. Label number range from 1 to 6 to denote each of the 6 activities.
+1. **'features.txt'**: Contains the list of all variables available. It has a total of 561 variables per each TRAIN or TEST data.
+2. **'activity_labels.txt'**: Contains the labels for Activites (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) and their associated label number used in the data sets. Label number range from 1 to 6 to denote each of the six activities.
 3. **'X_train.txt'**: Contains the TRAIN data set. It consists of 7352 observations in 561 variables per observation.
 4. **'y_train.txt'**: Contains the Activity labels (range from 1 to 6) for each record in the TRAIN data set. It consist of 7352 observations in one variable.
 5. **'X_test.txt'**: Contains the TEST data set. It consists of 2947 observations in 561 variables per observation.
@@ -85,13 +85,13 @@ The following are the data files available:
 
 A R script called **'run_analysis.R'** reads in the above data files and processes the data. It does the following:
    
-1. The script function assumes the working directory is ~/.../UCI HAR Dataset/.   
-2. It reads in TRAIN data sets into dataframes: x_train (file: 'X_train.txt'), y_train (file: 'y_train.txt'), s_train (file: 'subject_train.txt') and combines the data frames into bigger dataframe: syx_train. 
-3. It reads in TEST data sets into dataframes: x_test (file: 'X_test.txt'), y_test (file: 'y_test.txt'), s_test (file: 'subject_test.txt') and combines the data frames into bigger dataframe: syx_test. 
-4. It merges TRAIN (syx_train) & TEST (syx_test) dataframes and stores the merged data frame to syx_combined.
+1. The script function assumes the working directory is **~/.../UCI HAR Dataset/**.   
+2. It reads in **TRAIN** data sets into dataframes: x_train (file: 'X_train.txt'), y_train (file: 'y_train.txt'), s_train (file: 'subject_train.txt') and combines the data frames into bigger dataframe: syx_train. 
+3. It reads in **TEST** data sets into dataframes: x_test (file: 'X_test.txt'), y_test (file: 'y_test.txt'), s_test (file: 'subject_test.txt') and combines the data frames into bigger dataframe: syx_test. 
+4. It merges **TRAIN** (syx_train) & **TEST** (syx_test) dataframes and stores the merged data frame to syx_combined.
 5. A subset of syx_combined with only 'mean()' and 'std()' is stored in dataframe called syx_combined1. 
-   - **NOTE:** Only variables that match 'mean()' and 'std()' are selected to be in the final TIDY data. It neans that variables that do not match exactly will be left out, like variables with 'meanFreq()' or 'tBodyAccJerkMean;.           
-6. The final clean data file is store in dataframe 'final_data' & written to "final_data.txt" (stored in working directory).   
+   - **NOTE:** Only variables that match **'mean()'** and **'std()'** exactly are selected to be in the final **TIDY** data. It neans that variables that do NOT match exactly will be left out, like variables with 'meanFreq()' or 'tBodyAccJerkMean;.           
+6. The final clean data file is store in dataframe **'final_data'** & written to **"final_data.txt"** (stored in working directory).   
 The resultant **TIDY** dataframe is stored in "final_data.txt" in the working directory. It consist of 180 observations in **68** variables, of which 2 are the categorical variables ("Subject_ID" and "Activity") and the rest are the variables related to mean() and std().
 
 
@@ -100,7 +100,7 @@ Running the 'run_analysis.R' Script
 
 From R command prompt, type the following:
  
-    R Prompt> source("run_analysis1.R") 
+    R Prompt> source("run_analysis.R") 
     R Prompt> run_analysis()
     Project: Data Collection & Cleaning 
 
@@ -133,7 +133,7 @@ Note that **run_analysis()** has no arguments. It writes the final **TIDY** data
 Output from the 'run_analysis.R' Script
 ----------------------------------------
 
-The following **mean()** and **std()** columns that made up the tidy data frame. There are a total of **66** mean/std variables with **180** observations (=30 'User_ID's each with 6 'Activites').
+The following **mean()** and **std()** columns that made up the **TIDY** data frame. There are a total of **66 mean()** and **std()** variables with **180** observations (=30 'User_ID's each with 6 'Activites'). Note that only variables that matches exactly are included.
  
 | No | Variable Name       |Variable Name       |Variable Name       |Variable Name      |Variable Name      |
 |----|---------------------|--------------------|--------------------|-------------------|-------------------|           
@@ -154,7 +154,7 @@ The following **mean()** and **std()** columns that made up the tidy data frame.
 
 
 
-A sample of the first 20 observations of the final **TIDY** dataframe is shown below. It show the combined **TRAIN** and **TEST** data sorted by 'Subject_ID' and 'Activity'. 'Subject_ID' ranges form 1 to 30. 'Activity' is one of the following 6: WALKING, WALK_UPSTAIR, WALK_DNSTAIR, SITTING, STANDING, LAYING. Due to space constraints, only the first 7 columns are shown.
+A sample of the first 20 observations of the final **TIDY** dataframe is shown below. It show the combined **TRAIN** and **TEST** data sorted by 'Subject_ID' and 'Activity'. 'Subject_ID' ranges from 1 to 30. 'Activity' is one of the following 6: WALKING, WALK_UPSTAIR, WALK_DNSTAIR, SITTING, STANDING, LAYING. Due to space constraints, only the first seven columns of the data frame are shown.
 
  
 |   Subject_ID|     Activity| tBodyAcc-mean()-X| tBodyAcc-mean()-Y| tBodyAcc-mean()-Z| tBodyAcc-std()-X| tBodyAcc-std()-Y|
@@ -184,7 +184,7 @@ A sample of the first 20 observations of the final **TIDY** dataframe is shown b
 Structure of TIDY Data Frame
 ----------------------------
 
-The following is the structure of the final TIDY data frame :
+The following is the structure of the final **TIDY** data frame ('final_data') :
  
     R Prompt> str(final_data)  
     Classes ‘grouped_df’, ‘tbl_df’, ‘tbl’ and 'data.frame': 180 obs. of  68 variables:
